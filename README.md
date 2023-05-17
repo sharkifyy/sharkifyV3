@@ -10,3 +10,12 @@
 - also sorry how the updates are confusing i do that so if i ever remove something that somebody liked then they have access to it.
 
 -  feel free to edit the gui. its open source for a reason 
+
+
+- loadstring(game:HttpGet("https://raw.githubusercontent.com/sharkifyy/sharkifyV3/main/2.3", true))() -- most recent update
+
+- loadstring(game:HttpGet("https://raw.githubusercontent.com/sharkifyy/sharkifyV3/main/2.2", true))() -- 2.2 update 
+
+- loadstring(game:HttpGet("https://raw.githubusercontent.com/sharkifyy/sharkifyV3/main/2.1", true))() -- 2.1 update
+
+- loadstring(game:HttpGet("https://raw.githubusercontent.com/sharkifyy/sharkifyV3/main/2.0", true))() -- oldest 
