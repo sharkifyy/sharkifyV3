@@ -1,8 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
-warn [[if you need help with anything dm me on discord. shark!#0001]]
-warn [[decent HL gui i guess, that is still being updated.]]
-warn [[SharkifyV3 = W]]
 
 local Window = Rayfield:CreateWindow({
     Name = "SharkifyV3 ` 2.3",
@@ -791,20 +788,20 @@ local Section = Tab:CreateSection("main")
 local Button = Tab:CreateButton({
    Name = "fly (bypasses anticheat)",
    Callback = function()
-      local player = game.Players.LocalPlayer -- Get the local player
-      local mouse = player:GetMouse() -- Get the mouse
-      local flying = false -- Set flying to false by default
-      local speed = 175 -- Set the speed of flying
+      local player = game.Players.LocalPlayer 
+      local mouse = player:GetMouse() 
+      local flying = false 
+      local speed = 175 -- speed fr
       
       -- Define a function to toggle flying
       local function toggle()
-          flying = not flying -- Switch flying to true or false
-          if flying then -- If flying is true
-              player.Character.Humanoid.PlatformStand = true -- Make the character stand on a platform
-              local bodyVel = Instance.new("BodyVelocity", player.Character.HumanoidRootPart) -- Create a BodyVelocity object in the character's root part
-              bodyVel.Name = "FlyVelocity" -- Name it FlyVelocity
-              bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) -- Set the maximum force to infinite
-              bodyVel.Velocity = Vector3.new(0, 0.1, 0) -- Set the initial velocity to a small upward value
+          flying = not flying 
+          if flying then 
+              player.Character.Humanoid.PlatformStand = true 
+              local bodyVel = Instance.new("BodyVelocity", player.Character.HumanoidRootPart) 
+              bodyVel.Name = "FlyVelocity" 
+              bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) 
+              bodyVel.Velocity = Vector3.new(0, 0.1, 0) -- z
               -- Connect a function to the mouse's Move event
               mouse.Move:Connect(function()
                   -- Set the velocity of the BodyVelocity object to follow the mouse direction
@@ -834,13 +831,13 @@ local Button = Tab:CreateButton({
    --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
 enabled = true
---if true will check your messages too
+
 spyOnMyself = true
---if true will chat the logs publicly (fun, risky)
+
 public = false
---if true will use /me to stand out
+
 publicItalics = true
---customize private logs
+
 privateProperties = {
 	Color = Color3.fromRGB(0,255,255); 
 	Font = Enum.Font.SourceSansBold;
@@ -909,7 +906,7 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 local Button = Tab:CreateButton({
    Name = "player esp (E)",
    Callback = function()
-   -- ESP Script by Ririchi / Inori
+   
 -- Press E to toggle
 
 local plrs = game:GetService("Players")
@@ -1013,7 +1010,7 @@ local Button = Tab:CreateButton({
       local P1000ToggleKey = "x" -- Change that to whatever keybind: "t" 
    
       
-      
+      -- the streets thing i found months ago.
       --// Services
       checkcaller = checkcaller
       newcclosure = newcclosure
@@ -1319,31 +1316,6 @@ local Button = Tab:CreateButton({
 
 
 
-
-
-local Button = Tab:CreateButton({
-   Name = "player highlight(WARNING ONCE ITS ON U CANT TURN IT OFF)",
-   Callback = function()
-      _G.esp = true;
-
-      while _G.esp == true do
-      local players = game.Players:GetPlayers()
-      
-      for i,v in pairs(players) do
-       local esp = Instance.new("Highlight")
-       esp.Name = v.Name
-       esp.FillTransparency = 0
-       esp.FillColor = Color3.new(1, 0.662697, 0)
-       esp.OutlineColor = Color3.new(1, 0.333333, 1)
-       esp.OutlineTransparency = 0
-       esp.Parent = v.Character
-      end
-      
-      
-       Wait()
-      end
-   end,
-})
 
 
 
