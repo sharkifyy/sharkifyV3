@@ -627,35 +627,35 @@ local Section = Tab:CreateSection("main")
 local Button = Tab:CreateButton({
    Name = "fly (bypasses anticheat)",
    Callback = function()
-      local player = game.Players.LocalPlayer -- Get the local player
-      local mouse = player:GetMouse() -- Get the mouse
-      local flying = false -- Set flying to false by default
-      local speed = 162 -- Set the speed of flying
+      local player = game.Players.LocalPlayer 
+      local mouse = player:GetMouse() 
+      local flying = false 
+      local speed = 162 
       
-      -- Define a function to toggle flying
+   
       local function toggle()
-          flying = not flying -- Switch flying to true or false
-          if flying then -- If flying is true
-              player.Character.Humanoid.PlatformStand = true -- Make the character stand on a platform
-              local bodyVel = Instance.new("BodyVelocity", player.Character.HumanoidRootPart) -- Create a BodyVelocity object in the character's root part
+          flying = not flying 
+          if flying then 
+              player.Character.Humanoid.PlatformStand = true 
+              local bodyVel = Instance.new("BodyVelocity", player.Character.HumanoidRootPart) 
               bodyVel.Name = "FlyVelocity" -- Name it FlyVelocity
-              bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) -- Set the maximum force to infinite
-              bodyVel.Velocity = Vector3.new(0, 0.1, 0) -- Set the initial velocity to a small upward value
-              -- Connect a function to the mouse's Move event
+              bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) 
+              bodyVel.Velocity = Vector3.new(0, 0.1, 0) 
+              
               mouse.Move:Connect(function()
-                  -- Set the velocity of the BodyVelocity object to follow the mouse direction
+                  
                   bodyVel.Velocity = (mouse.Hit.p - player.Character.HumanoidRootPart.Position).Unit * speed
               end)
-          else -- If flying is false
-              player.Character.Humanoid.PlatformStand = false -- Make the character stop standing on a platform
-              player.Character.HumanoidRootPart:FindFirstChild("FlyVelocity"):Destroy() -- Destroy the BodyVelocity object
+          else 
+              player.Character.Humanoid.PlatformStand = false 
+              player.Character.HumanoidRootPart:FindFirstChild("FlyVelocity"):Destroy() 
           end
       end
       
       -- Connect a function to the mouse's KeyDown event
       mouse.KeyDown:Connect(function(key)
           if key == "l" then -- If the key pressed is L
-              toggle() -- Call the toggle function
+              toggle() 
           end
       end)
    end,
@@ -663,7 +663,7 @@ local Button = Tab:CreateButton({
 
 
 
-
+-- old spychat LOL used for years
 local Button = Tab:CreateButton({
    Name = "spychat",
    Callback = function()
@@ -749,7 +749,7 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 local Button = Tab:CreateButton({
    Name = "player esp (E)",
    Callback = function()
-   -- ESP Script by Ririchi / Inori
+  
 -- Press E to toggle
 
 local plrs = game:GetService("Players")
@@ -840,13 +840,13 @@ end)
 
 mouse.KeyDown:Connect(function(key)
     if key == "e" then -- change this to whatever key you want to toggle the esp with
-        espEnabled = not espEnabled -- toggles the esp on or off when you press the key 
+        espEnabled = not espEnabled 
     end
 end)
    end,
 })
 
-
+-- the streets anti aims lol not mine
 local Button = Tab:CreateButton({
    Name = "kick glitch (X)",
    Callback = function()
