@@ -603,28 +603,27 @@ local Section = Tab:CreateSection("main")
 local Button = Tab:CreateButton({
    Name = "fly (bypasses anticheat)",
    Callback = function()
-      local player = game.Players.LocalPlayer -- Get the local player
-      local mouse = player:GetMouse() -- Get the mouse
-      local flying = false -- Set flying to false by default
-      local speed = 162 -- Set the speed of flying
+      local player = game.Players.LocalPlayer 
+      local mouse = player:GetMouse() 
+      local flying = false 
+      local speed = 162 
       
-      -- Define a function to toggle flying
       local function toggle()
           flying = not flying -- Switch flying to true or false
           if flying then -- If flying is true
-              player.Character.Humanoid.PlatformStand = true -- Make the character stand on a platform
-              local bodyVel = Instance.new("BodyVelocity", player.Character.HumanoidRootPart) -- Create a BodyVelocity object in the character's root part
+              player.Character.Humanoid.PlatformStand = true 
+              local bodyVel = Instance.new("BodyVelocity", player.Character.HumanoidRootPart)
               bodyVel.Name = "FlyVelocity" -- Name it FlyVelocity
-              bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) -- Set the maximum force to infinite
-              bodyVel.Velocity = Vector3.new(0, 0.1, 0) -- Set the initial velocity to a small upward value
-              -- Connect a function to the mouse's Move event
+              bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) 
+              bodyVel.Velocity = Vector3.new(0, 0.1, 0) 
+             
               mouse.Move:Connect(function()
-                  -- Set the velocity of the BodyVelocity object to follow the mouse direction
+                 
                   bodyVel.Velocity = (mouse.Hit.p - player.Character.HumanoidRootPart.Position).Unit * speed
               end)
           else -- If flying is false
-              player.Character.Humanoid.PlatformStand = false -- Make the character stop standing on a platform
-              player.Character.HumanoidRootPart:FindFirstChild("FlyVelocity"):Destroy() -- Destroy the BodyVelocity object
+              player.Character.Humanoid.PlatformStand = false 
+              player.Character.HumanoidRootPart:FindFirstChild("FlyVelocity"):Destroy()
           end
       end
       
@@ -639,20 +638,20 @@ local Button = Tab:CreateButton({
 
 
 
-
+-- old spy chat not made by anyone i know of.
 local Button = Tab:CreateButton({
    Name = "spychat",
    Callback = function()
-   --This script reveals ALL hidden messages in the default chat
---chat "/spy" to toggle!
+
+
 enabled = true
---if true will check your messages too
+
 spyOnMyself = true
---if true will chat the logs publicly (fun, risky)
+
 public = false
---if true will use /me to stand out
+
 publicItalics = true
---customize private logs
+
 privateProperties = {
 	Color = Color3.fromRGB(0,255,255); 
 	Font = Enum.Font.SourceSansBold;
