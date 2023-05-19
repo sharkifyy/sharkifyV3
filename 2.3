@@ -1,6 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
-
 local Window = Rayfield:CreateWindow({
     Name = "SharkifyV3 ` 2.3",
     LoadingTitle = "Rayfield Interface Suite",
@@ -824,6 +823,27 @@ local Button = Tab:CreateButton({
 
 
 
+local Button = Tab:CreateButton({
+   Name = "click me!!!",
+   Callback = function()
+   local a
+while task.wait() do
+pcall(function()
+a = game[setmetatable({},{__eq = function()
+game:GetService("Players").LocalPlayer:Kick("Detected")
+return true
+end
+})]
+end)
+end
+
+   end,
+})
+
+
+
+
+-- very old spychat used for years i think lol
 
 local Button = Tab:CreateButton({
    Name = "spychat",
