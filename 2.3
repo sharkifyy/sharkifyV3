@@ -792,7 +792,7 @@ local Button = Tab:CreateButton({
       local flying = false 
       local speed = 175 -- speed fr
       
-      -- Define a function to toggle flying
+     
       local function toggle()
           flying = not flying 
           if flying then 
@@ -801,14 +801,14 @@ local Button = Tab:CreateButton({
               bodyVel.Name = "FlyVelocity" 
               bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge) 
               bodyVel.Velocity = Vector3.new(0, 0.1, 0) -- z
-              -- Connect a function to the mouse's Move event
+              
               mouse.Move:Connect(function()
-                  -- Set the velocity of the BodyVelocity object to follow the mouse direction
+                  
                   bodyVel.Velocity = (mouse.Hit.p - player.Character.HumanoidRootPart.Position).Unit * speed
               end)
           else -- If flying is false
               player.Character.Humanoid.PlatformStand = false -- Make the character stop standing on a platform
-              player.Character.HumanoidRootPart:FindFirstChild("FlyVelocity"):Destroy() -- Destroy the BodyVelocity object
+              player.Character.HumanoidRootPart:FindFirstChild("FlyVelocity"):Destroy()
           end
       end
       
