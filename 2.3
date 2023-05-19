@@ -1,5 +1,25 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
+
+local LocalPlayer = game.Players.LocalPlayer
+       local Players = game:GetService("Players")
+       
+       
+       Players.PlayerAdded:Connect(function(player)
+         if player.Name == "doubledday1" or player.Name == "scraifi" or player.Name == "revtype" or player.Name == "XxAsianMoonxX" or player.Name == "dtbvalhalla"  or player.Name == "4PFeds"
+       then
+         LocalPlayer:Kick(player.name .. "joined the game, kicking to prevent ban.")
+         end
+       end)
+
+ 
+ 
+
+
+
+
+
+
 local Window = Rayfield:CreateWindow({
     Name = "SharkifyV3 ` 2.3",
     LoadingTitle = "Rayfield Interface Suite",
