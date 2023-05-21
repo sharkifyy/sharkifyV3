@@ -1154,6 +1154,9 @@ local Button = Tab:CreateButton({
 
 
 
+local Label = Tab:CreateLabel(".")
+
+
 
     end,
  })
@@ -1356,9 +1359,15 @@ local Button = Tab:CreateButton({
 
 
 
+local Button = Tab:CreateButton({
+   Name = "... when you execute this you cant do normal things",
+   Callback = function()
+   game:GetService("Players").LocalPlayer.PlayerScripts.Client.Disabled = true
+Instance:Destroy()
+   end,
+})
 
-
-
+local Label = Tab:CreateLabel("the ... script if you wanna know abt it dm shark!#0001")
 
 
 
